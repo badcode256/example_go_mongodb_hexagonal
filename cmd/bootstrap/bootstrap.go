@@ -2,7 +2,7 @@ package bootstrap
 
 import (
 	"context"
-	//"database/sql"
+	"os"
 
 	"log"
 
@@ -13,7 +13,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-var uriDb = "mongodb+srv://user:pass@cluster0.dvbglbv.mongodb.net/dbBusiness?retryWrites=true&w=majority"
+var uriDb = os.Getenv("MONGO_URI")
 
 func Start() error {
 
